@@ -11,6 +11,14 @@
 @import url('normalize.css');
 
 /* Section 2 - General rules */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
 header {
     background-color: #0e89d5;
 }
