@@ -39,8 +39,7 @@ h2, h3, h4 {
 }
 
 #curtemp {
-    font-size: 4em;
-    font-weight: bold;
+    font-size: 6em;
 }
 
 body {
@@ -67,9 +66,10 @@ body {
     color:blue;
 }
 
-/* Wind picture */
-#wind .tile img{
-    z-index: -1;
+#windspeed {
+    position: absolute;
+    z-index: 1000;
+    top: 30px;
 }
 
 .tile img {
