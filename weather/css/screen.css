@@ -31,6 +31,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Sansita', sans-serif;
 }
 
+div#curweather h1 p {
+    text-align: center;
+}
+
 body {
     font-size: 18px;
     font-family: Helvetica, Arial, sans-serif;
@@ -41,6 +45,11 @@ body {
     margin: .2em auto;
     border: 1px solid;
     border-radius: 15px;
+}
+
+/* Wind picture */
+#wind .tile img{
+    z-index: -1;
 }
 
 .tile img {
