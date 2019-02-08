@@ -66,11 +66,11 @@ body {
     color:blue;
 }
 
-#windspeed {
+/* #windspeed {
     position: absolute;
     z-index: 1000;
     top: 300px;
-}
+} */
 
 .tile img {
     width: 60%;
