@@ -9,11 +9,13 @@
   <link rel="stylesheet" type="text/css" href="/weather/css/screen.css" media="screen">
  </head>
  <body> 
-<header>
+<header id="page-header">
+    <div id="logo">&#9748;</div>
     <img src="weather-site-images/logo.jpg" alt="logo">
-    <h1>The Weather Site</h1>
-    <h1>Franklin, ID</h1>
+    <p id="site-brand">The Weather Site</p>
 </header>
+<h1>Franklin, ID</h1>
+
 <nav>
     <ul>
     <li><a href="/weather/weather.html" title="Go to the Weather Site home page">Current</a></li>
@@ -27,13 +29,13 @@
     <p><b>Location:</b> 42.07&deg;F N, 111.79&deg;F W</p>
 </section>
 <div id="curWeather">
-    <section id="temps">
+    <section id="temps" class="tile">
         <h1>Temperature</h1>
         <p>24&deg;F</p>
         <p>34&deg;F  21&deg;F</p>
         <p>Feels Like 25&deg;F</p>
     </section>
-    <section id="wind">
+    <section id="wind" class="tile">
         <h1>Wind</h1>
         <img src="weather-site-images/wind-pointer.png">
         <p>2 mph</p>
@@ -41,7 +43,7 @@
         <p><b>Gusts</b>: 5mph</p>
     </section>
     
-    <section id="summary">
+    <section id="summary" class="tile">
         <h1>Clear</h1>
         <img src="weather-site-images/clear.jpg">
     </section>
