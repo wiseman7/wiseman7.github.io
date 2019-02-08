@@ -36,7 +36,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #curtemp {
-    font-size: 2em;
+    font-size: 4em;
+    font-weight: bold;
 }
 
 body {
