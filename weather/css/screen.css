@@ -55,6 +55,14 @@ body {
     text-align: center;
 }
 
+/* high and low temperature */
+#high {
+    color: red;
+}
+#low {
+    color:blue;
+}
+
 /* Wind picture */
 #wind .tile img{
     z-index: -1;
