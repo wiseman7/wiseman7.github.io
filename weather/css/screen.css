@@ -63,7 +63,7 @@ body {
 .tile img {
     width: 60%;
     height: auto;
-    background-position: center;
+    margin: auto;
 }
 
 nav ul li {
