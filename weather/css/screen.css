@@ -69,7 +69,7 @@ body {
 #windspeed {
     position: absolute;
     z-index: 1000;
-    top: 30px;
+    top: 300px;
 }
 
 .tile img {
