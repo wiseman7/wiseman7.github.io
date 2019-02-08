@@ -90,6 +90,9 @@ body {
 nav ul li {
     display: inline-block;
     list-style: none;
+}
+
+nav a {
     color: white;
 }
 
@@ -98,6 +101,7 @@ nav {
     bottom: 0;
     left: 0;
     background-color: #0e89d5;
+    width: 100%;
 }
 
 footer {
