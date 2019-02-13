@@ -27,6 +27,11 @@ header {
     background-color: #0e89d5;
 }
 
+/* put logo and header name on same line */
+#page-header{
+    display:flex;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Sansita', sans-serif;
 }
