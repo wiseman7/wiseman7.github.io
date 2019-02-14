@@ -61,6 +61,10 @@ body {
 
 #temps > h1 {
     text-align: center;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+
 }
 
 /* high and low temperature */
