@@ -64,7 +64,6 @@ body {
     list-style: none;
     display: flex;
     flex-direction: row;
-
 }
 
 /* high and low temperature */
@@ -90,6 +89,7 @@ body {
 
 #hourly{
     background-color: rgba(200,200,200,.6);
+    list-style: none;
     margin: .2em auto;
     border: 1px solid;
     border-radius: 15px;
