@@ -71,7 +71,7 @@ body {
 /* high and low temperature */
 #highandlow {
     list-style: none;
-    font-size: 2em;
+    font-size: 1em;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
