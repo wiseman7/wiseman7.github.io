@@ -30,7 +30,7 @@ header {
 
 /* put logo and header name on same line */
 #page-header{
-    display:flex;
+    display: flex;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -111,9 +111,13 @@ body {
     list-style: none;
     overflow: auto;
 }
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
 
 nav ul li {
-    display: inline-block;
     list-style: none;
     text-decoration: none;
 }
@@ -141,3 +145,4 @@ footer {
     font-size: 2em;
     font-weight: 600;
 }
+/* Section 3 - Mobile First */
