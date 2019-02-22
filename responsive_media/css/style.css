@@ -1,6 +1,12 @@
 /********************************
 * Default Styles - Mobile First
 ********************************/
+@media only screen and (max-width: 600px) {
+	#grandcanyon{
+		height: 80px;
+		width: 400px;
+	}
+}
 
 body {
 	font-family: sans-serif;
@@ -219,6 +225,12 @@ h1 {
 	.page-nav li {
 		flex: 0 1 10%;
 	}
+
+	#grandcanyon {
+		height: 200px;
+		width: 1200px;
+	}
+
 	.main {
 		max-width: 80%;
 		padding-right: 2em;
