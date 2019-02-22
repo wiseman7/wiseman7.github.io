@@ -16,8 +16,7 @@ html {
 }
 
 #logo {
-    font-size: 4em;
-    padding-top: 30px;
+    font-size: 2em;
 }
 
 *, *:before, *:after{
@@ -74,8 +73,10 @@ body {
     font-size: 1em;
     display: flex;
     flex-wrap: wrap;
+    width: 50%;
+    margin: 0 auto;
     text-align: center;
-    justify-content: center;
+    justify-content: space-around;
     padding-left: 0%;
 }
 #high {
@@ -94,6 +95,16 @@ body {
     height: auto;
     display: block;
     margin: auto;
+}
+
+/* wind mill */
+#windimg {
+    background-image: url("/weather/weather-site-images/wind-pointer.png");
+    height: 170px;
+    width: 200px;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    width: 50%;
 }
 
 #hourly{
@@ -124,6 +135,7 @@ nav ul li {
 
 nav a {
     color: white;
+    text-decoration: none;
 }
 
 nav {
@@ -144,5 +156,6 @@ footer {
 #site-brand {
     font-size: 2em;
     font-weight: 600;
+    margin: 0;
 }
 /* Section 3 - Mobile First */
