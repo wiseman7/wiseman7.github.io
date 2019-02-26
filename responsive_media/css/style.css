@@ -53,8 +53,13 @@ h1 {
 /*	Background Images - use with Small screens */
 
 .page-header {
-	background-image: url("images/grand-canyon_banner1200.jpg");
+	background-image: url("../images/grand-canyon_banner400\(1\).jpg");
 	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+    padding: 15px;
 }
 
 
@@ -177,7 +182,7 @@ h1 {
 	}
 	/*	Background Images - Use with medium screens */
 	.page-header {
-		background-image:url("images/grand-canyon_banner1200(1).jpg");
+		background-image:url("../images/grand-canyon_banner1200\(1\).jpg");
 	}
 	.page-nav {
 		position: relative;
@@ -224,7 +229,8 @@ h1 {
 	}
 	/*	Background Images - Use with large screens */
 	.page-header {
-		background-image:url("images/grand-canyon_banner1200(1).jpg");
+		background-image:url("../images/grand-canyon_banner1200\(1\).jpg");
+
 	}
 	.page-nav li {
 		flex: 0 1 10%;
