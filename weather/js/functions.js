@@ -30,6 +30,7 @@ wc = (wc > curtemp)?curtemp:wc;
 
 // Display windchill
 console.log(wc);
+feelTemp.innerHTML = wc;
 
 // wc = 'Feels like '+wc+' F;
 wc = 'Feels like ' + wc + '&deg;F';
@@ -98,7 +99,7 @@ function getCondition(phrase){
     else if (phrase.includes("clear")){
       return clear;
     }
-    else if (phrase.includes("rain") || phrase.includes("Wet")){
+    else if (phrase.includes("rain") || phrase.includes("Wet") || phrase.includes("shower")){
         return rain;
     }
     else if (phrase.includes("fog")){
@@ -113,7 +114,11 @@ function getCondition(phrase){
 let condition = getCondition();
 
 function changeSummaryImage(let condition){
-
+switch (condition)
+  {
+    case cloudy:
+      document.getElementById("").src;
+  }
     
 }
 
