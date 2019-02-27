@@ -86,9 +86,7 @@ body {
     color:blue;
 }
 
-#windspeed {
-  
-}
+
 
 .tile img {
     width: 60%;
@@ -100,11 +98,17 @@ body {
 /* wind mill */
 #windimg {
     background-image: url("/weather/weather-site-images/wind-pointer.png");
-    height: 170px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     background-repeat: no-repeat;
     margin: 0 auto;
     width: 50%;
+    transform: rotate(270deg);
+    /* height: 150px;
+ width: 150px;
+ background: no-repeat center/85% url('/weather/images/wind-pointer.png');
+ z-index: 100;
+ margin: -.6em auto 0; */
 }
 
 #hourly{
