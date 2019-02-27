@@ -86,35 +86,38 @@ function windDial(direction){
 function getCondition(phrase){
    
     // Variables for images
-    const cloudy = document.getElementById("rainy").src;
-    const clear = document.getElementById("clear").src;
-    const rain = document.getElementById("cloudy").src;
-    const fog = document.getElementById("fog").src;
-    const snow = document.getElementById("snow").src;
+    let cloudy = document.getElementById("rainy").src;
+    let clear = document.getElementById("clear").src;
+    let rain = document.getElementById("cloudy").src;
+    let fog = document.getElementById("fog").src;
+    let snow = document.getElementById("snow").src;
 
-    if (phrase == str.includes("cloudy") || str.includes("overcast")){
+    if (phrase.includes("cloudy") || phrase.includes("overcast")){
       return cloudy;
     }
-    else if (phrase == str.includes("clear")){
+    else if (phrase.includes("clear")){
       return clear;
     }
-    else if (phrase == str.includes("rain") || str.includes("Wet")){
+    else if (phrase.includes("rain") || phrase.includes("Wet")){
         return rain;
     }
-    else if (phrase == str.includes("fog")){
+    else if (phrase.includes("fog")){
         return fog;
     }
-    else if (phrase == str.includes("snow")){
+    else if (phrase.includes("snow")){
         return snow;
     } 
 
 }
 
-function changeSummaryImage(getCondition()){
+let condition = getCondition();
+
+function changeSummaryImage(let condition){
+
     
 }
 
-function convertMeters(meters){
+function convertMeters(let meters){
     const feet = 3.28 * meters;
     const round = Math.round(feet);
 
