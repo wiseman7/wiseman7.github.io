@@ -41,6 +41,7 @@ h2, h3, h4 {
 
 #curWeather p {
     text-align: center;
+    background-size: cover;
 }
 
 #curtemp {
@@ -163,3 +164,8 @@ footer {
     margin: 0;
 }
 /* Section 3 - Mobile First */
+
+/* Background pictures for summary */
+.clear {
+    background-image: url("/weather/optimized-images/clear_250.jpg")
+}

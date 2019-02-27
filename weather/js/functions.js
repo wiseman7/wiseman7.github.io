@@ -84,10 +84,34 @@ function windDial(direction){
 }
 
 function getCondition(phrase){
-    if (phrase == "clear")
-    {
+   
+    // Variables for images
+    const cloudy = document.getElementById("rainy").src;
+    const clear = document.getElementById("clear").src;
+    const rain = document.getElementById("cloudy").src;
+    const fog = document.getElementById("fog").src;
+    const snow = document.getElementById("snow").src;
 
+    if (phrase == str.includes("cloudy") || str.includes("overcast")){
+      return cloudy;
     }
+    else if (phrase == str.includes("clear")){
+      return clear;
+    }
+    else if (phrase == str.includes("rain") || str.includes("Wet")){
+        return rain;
+    }
+    else if (phrase == str.includes("fog")){
+        return fog;
+    }
+    else if (phrase == str.includes("snow")){
+        return snow;
+    } 
+
+}
+
+function changeSummaryImage(getCondition()){
+    
 }
 
 function convertMeters(meters){
