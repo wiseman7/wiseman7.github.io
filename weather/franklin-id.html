@@ -26,10 +26,10 @@
     </nav>
     <main id="page-content">
         <section>
-            <p><b>Zip:</b> 83237| <b>Elevation:</b> 1514.246 ft.|
+            <p><b>Zip:</b> 83237| <b>Elevation:</b> <span id="convertMeters">1514.246</span> ft.|
                 <p><b>Location:</b> 42.07&deg; N, 111.79&deg; W</p>
         </section>
-        <div id="curWeather">
+        <div id="curWeather" class="sunny">
             <section id="temps" class="tile">
                 <h2>Temperature</h2>
                 <p id="curtemp">40&deg;F</p>
@@ -37,7 +37,7 @@
                     <li id="high">34&deg;F </li>
                     <li id="low">21&deg;F</li>
                 </ul>
-                <p id="feelTemp">Feels Like <span id="feelTemp">??</span>&deg;F</p>
+                <p id="feelTemp">Feels Like <span id="feelTemp">25</span>&deg;F</p>
             </section>
             <section id="wind" class="tile">
                 <h2>Wind</h2>
@@ -49,7 +49,7 @@
 
             <section id="summary" class="tile">
                 <h2>Rainy</h2>
-                <img src="weather-site-images/rain.jpg" alt="picture of rain">
+                <img id ="weatherImage" src="weather-site-images/rain.jpg" alt="picture of rain">
             </section>
         </div>
         <section id="hourly">
@@ -73,7 +73,7 @@
     <footer>
         &copy; 2019, The Weather Site
     </footer>
-    <script src="/weather/js/functions.js"></script>
+    <script src="js/functions.js"></script>
 </body>
 
 </html>

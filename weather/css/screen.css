@@ -96,14 +96,18 @@ body {
     margin: auto;
 }
 
+#speed {
+    margin-top: -80px;
+    margin-bottom: 80px;
+}
+
 /* wind mill */
 #windimg {
     background-image: url("/weather/weather-site-images/wind-pointer.png");
-    height: 150px;
-    width: 150px;
+    height: 167px;
+    width: 167px;
     background-repeat: no-repeat;
     margin: 0 auto;
-    width: 50%;
     /* height: 150px;
  width: 150px;
  background: no-repeat center/85% url('/weather/images/wind-pointer.png');
@@ -180,5 +184,85 @@ footer {
 
 /* Background pictures for summary */
 .clear {
-    background-image: url("/weather/optimized-images/clear_250.jpg")
+    background-image: url("/weather/optimized-images/clear_250.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.snow {
+    background-image: url("/weather/optimized-images/snow_250.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.rain {
+    background-image: url("/weather/optimized-images/rain_250.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fog {
+    background-image: url("/weather/optimized-images/fog_250.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cloud {
+    background-image: url("/weather/optimized-images/clouds_250.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/********************************
+* Medium Screen Styles
+* 750px viewport / 18px font = 41.67em
+********************************/
+
+@media (min-width: 41.67em) {
+    #curWeather {
+        display: flex;
+        flex-direction: row;  }
+
+    #curWeather section{
+        width: 32%;
+    }
+
+    .clear {
+        background-image: url("/weather/optimized-images/clear_400.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .snow {
+        background-image: url("/weather/optimized-images/snow_400.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .rain {
+        background-image: url("/weather/optimized-images/rain_400.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .fog {
+        background-image: url("/weather/optimized-images/fog_400.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .cloud {
+        background-image: url("/weather/optimized-images/clouds_400.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+
+/********************************
+* Large Screen Styles
+* 1200px viewport / 18px font = 66.7em
+********************************/
+
+@media (min-width: 66.7em) {
+	
 }

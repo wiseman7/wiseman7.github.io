@@ -11,7 +11,12 @@
     const direction = "NNE";
     windDial(direction);
 
+    const phrase = "snow";
+    const condition = getCondition(phrase);
+    changeSummaryImage(condition);
 
+    const meters = 25;
+    convertMeters(meters);
 
  // calculate wind chill temperature.
  function buildWC(speed, curtemp){
@@ -83,50 +88,67 @@ function windDial(direction){
           break;
     }
 }
+// interpret phrase to a single id
 
 function getCondition(phrase){
    
-    // Variables for images
-    let cloudy = document.getElementById("rainy").src;
-    let clear = document.getElementById("clear").src;
-    let rain = document.getElementById("cloudy").src;
-    let fog = document.getElementById("fog").src;
-    let snow = document.getElementById("snow").src;
-
     if (phrase.includes("cloudy") || phrase.includes("overcast")){
-      return cloudy;
+      return "cloudy";
     }
-    else if (phrase.includes("clear")){
-      return clear;
+    else if (phrase.includes("clear") || phrase.includes("sunny")){
+      return "clear";
     }
     else if (phrase.includes("rain") || phrase.includes("Wet") || phrase.includes("shower")){
-        return rain;
+        return "rain";
     }
     else if (phrase.includes("fog")){
-        return fog;
+        return "fog";
     }
     else if (phrase.includes("snow")){
-        return snow;
+        return "snow";
     } 
 
 }
 
-let condition = getCondition();
+// Change background image to match weather
 
-function changeSummaryImage(let condition){
+function changeSummaryImage(condition){
 switch (condition)
   {
-    case cloudy:
-      document.getElementById("").src;
+    case "cloudy":
+    console.log(condition);
+      document.getElementById("curWeather").setAttribute('class','cloud');
+      document.getElementById("weatherImage").setAttribute('src', 'optimized-images/clouds_250.jpg');
+      break;
+    case "clear":
+    console.log(condition);
+      document.getElementById("curWeather").setAttribute('class','clear');
+      document.getElementById("weatherImage").setAttribute('src', 'optimized-images/clear_250.jpg');
+      break;
+    case "fog":
+    console.log(condition);
+      document.getElementById("curWeather").setAttribute('class','fog');
+      document.getElementById("weatherImage").setAttribute('src', 'optimized-images/fog_250.jpg');
+      break;
+    case "snow":
+    console.log(condition);
+      document.getElementById("curWeather").setAttribute('class','snow');
+      document.getElementById("weatherImage").setAttribute('src', 'optimized-images/snow_250.jpg');
+      break;
+    case "rainy":
+    console.log(condition);
+      document.getElementById("curWeather").setAttribute('class','rain');
+      document.getElementById("weatherImage").setAttribute('src', 'optimized-images/rain_250.jpg');
+      break;
   }
     
 }
-
-function convertMeters(let meters){
+// Convert meters to feet and round
+function convertMeters(meters){
     const feet = 3.28 * meters;
     const round = Math.round(feet);
 
-    document.getElementById("convertMeters") = round;
+    document.getElementById("convertMeters").innerHTML = round;
 }
 
  
