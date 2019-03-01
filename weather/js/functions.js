@@ -3,7 +3,7 @@
  **************************************/
 
     // Variables for Function Use
-    const curtemp = 31;
+    const curtemp = 55;
     const speed = 5;
 
     buildWC(speed, curtemp);
@@ -18,7 +18,8 @@
     const meters = 25;
     convertMeters(meters);
 
- // calculate wind chill temperature.
+ 
+    // calculate wind chill temperature.
  function buildWC(speed, curtemp){
   
 const feelTemp= document.getElementById('feelTemp');
@@ -40,6 +41,7 @@ feelTemp.innerHTML = wc;
 // wc = 'Feels like '+wc+' F;
 wc = 'Feels like ' + wc + '&deg;F';
 feelTemp.innerHTML= wc;
+
 
 }
 
