@@ -11,7 +11,7 @@
     const direction = "NNE";
     windDial(direction);
 
-    const phrase = "snow";
+    const phrase = "rain";
     const condition = getCondition(phrase);
     changeSummaryImage(condition);
 
@@ -137,7 +137,7 @@ switch (condition)
       document.getElementById("curWeather").setAttribute('class','snow');
       document.getElementById("weatherImage").setAttribute('src', 'optimized-images/snow_250.jpg');
       break;
-    case "rainy":
+    case "rain":
     console.log(condition);
       document.getElementById("curWeather").setAttribute('class','rain');
       document.getElementById("weatherImage").setAttribute('src', 'optimized-images/rain_250.jpg');
