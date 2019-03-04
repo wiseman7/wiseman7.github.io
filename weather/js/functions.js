@@ -11,7 +11,7 @@
     const direction = "NNE";
     windDial(direction);
 
-    const phrase = "rain";
+    const phrase = "clear";
     const condition = getCondition(phrase);
     changeSummaryImage(condition);
 
@@ -121,27 +121,36 @@ switch (condition)
     console.log(condition);
       document.getElementById("curWeather").setAttribute('class','cloud');
       document.getElementById("weatherImage").setAttribute('src', 'optimized-images/clouds_250.jpg');
+      document.getElementById("weatherImage").setAttribute('alt', "cloudy weather");
+      document.getElementById("summary-heading").innerHTML= "Cloudy";
       break;
     case "clear":
     console.log(condition);
       document.getElementById("curWeather").setAttribute('class','clear');
       document.getElementById("weatherImage").setAttribute('src', 'optimized-images/clear_250.jpg');
+      document.getElementById("weatherImage").setAttribute('alt', "clear weather");
+      document.getElementById("summary-heading").innerHTML= "Clear";
       break;
     case "fog":
     console.log(condition);
       document.getElementById("curWeather").setAttribute('class','fog');
       document.getElementById("weatherImage").setAttribute('src', 'optimized-images/fog_250.jpg');
       document.getElementById("weatherImage").setAttribute('alt', "foggy weather");
+      document.getElementById("summary-heading").innerHTML= "Foggy";
       break;
     case "snow":
     console.log(condition);
       document.getElementById("curWeather").setAttribute('class','snow');
       document.getElementById("weatherImage").setAttribute('src', 'optimized-images/snow_250.jpg');
+      document.getElementById("weatherImage").setAttribute('alt', "snowy weather");
+      document.getElementById("summary-heading").innerHTML= "Snow";
       break;
     case "rain":
     console.log(condition);
       document.getElementById("curWeather").setAttribute('class','rain');
       document.getElementById("weatherImage").setAttribute('src', 'optimized-images/rain_250.jpg');
+      document.getElementById("weatherImage").setAttribute('alt', "rainy weather");
+      document.getElementById("summary-heading").innerHTML= "Rainy";
       break;
   }
     

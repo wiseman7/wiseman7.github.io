@@ -134,11 +134,14 @@ body {
 
 #hourlyNumbers{
     display: flex;
-    flex-flow: row nowrap;
-    flex-shrink: 3;
+    /* width: 100%; */
+    /* justify-content: space-around; */
+    /* flex-shrink: 3; */
     list-style: none;
-    overflow: auto;
+    overflow: scroll;
+    white-space: nowrap;
 }
+
 nav ul {
     display: flex;
     justify-content: space-around;
