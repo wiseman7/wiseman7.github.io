@@ -131,6 +131,7 @@ switch (condition)
     console.log(condition);
       document.getElementById("curWeather").setAttribute('class','fog');
       document.getElementById("weatherImage").setAttribute('src', 'optimized-images/fog_250.jpg');
+      document.getElementById("weatherImage").setAttribute('alt', "foggy weather");
       break;
     case "snow":
     console.log(condition);
