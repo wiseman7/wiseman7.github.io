@@ -1,6 +1,8 @@
 // Add 'use strict' directive at the top of the new file
 
 
+fetchData(weatherURL);
+
 
 let pageNav = document.getElementById('page-nav');
 let statusContainer = document.getElementById('status');
