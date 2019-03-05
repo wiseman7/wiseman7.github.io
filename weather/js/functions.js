@@ -100,7 +100,7 @@ function getCondition(phrase){
     else if (phrase.includes("clear") || phrase.includes("sunny")){
       return "clear";
     }
-    else if (phrase.includes("rain") || phrase.includes("Wet") || phrase.includes("shower")){
+    else if (phrase.includes("rain") || (phrase.includes("thunder")) || phrase.includes("Wet") || phrase.includes("shower")){
         return "rain";
     }
     else if (phrase.includes("fog")){

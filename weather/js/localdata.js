@@ -32,12 +32,15 @@ function fetchData(weatherURL){
             console.log('fullName is: ' + fullName);
 
             // Temperature Data
+            let locTemp = g.Temp;
 
             // Wind Data
+            let locWind = g.Wind;
 
             // Current conditions
 
             // hourly data
+            let locHourly = g.Hourly;
 
             let pageTitle = document.getElementById('page-title');
             let fullNameNode = document.createTextNode(fullName);
