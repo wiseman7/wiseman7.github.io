@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Franklin, ID | Weather Site</title>
+    <meta name="description" content="Local weather for Franklin, ID.">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Britany Wiseman">
+    <link rel="stylesheet" type="text/css" href="/weather/css/screen.css" media="screen">
+</head>
+
+<body>
+    <header id="page-header">
+        <div id="logo">&#9748;</div>
+        <p id="site-brand">The Weather Site</p>
+    </header>
+    <h1 id="locName">Franklin, ID</h1>
+    <nav id="page-nav">
+        <ul>
+            <li><a href="/weather/weather.html" title="Go to the Weather Site home page">Current</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Franklin</a></li>
+            <li><a href="#">Greenville</a></li>
+        </ul>
+    </nav>
+    <section id="status">Please be patient while I get your weather infromation.</section>
+    <main id="page-content">
+        <section>
+            <p><b>Zip:</b> 83237| <b>Elevation:</b> <span id="convertMeters">1514.246</span> ft.|
+                <p><b>Location:</b> 42.07&deg; N, 111.79&deg; W</p>
+        </section>
+        <div id="curWeather" class="sunny">
+            <section id="temps" class="tile">
+                <h2>Temperature</h2>
+                <p id="curtemp">40&deg;F</p>
+                <ul id="highandlow">
+                    <li id="high">34&deg;F </li>
+                    <li id="low">21&deg;F</li>
+                </ul>
+                <p id="feelTemp">Feels Like <span id="feelTemp">25</span>&deg;F</p>
+            </section>
+            <section id="wind" class="tile">
+                <h2>Wind</h2>
+                <div id= "windimg" class="w"></div>
+                <p id="speed">5 mph</p>
+                <p><b>Direction</b>: SW</p>
+                <p><b>Gusts</b>: 10-12mph</p>
+            </section>
+
+            <section id="summary" class="tile">
+                <h2 id="summary-heading">Rainy</h2>
+                <img id ="weatherImage" src="weather-site-images/rain.jpg" alt="picture of rain">
+            </section>
+        </div>
+        <section id="hourly" class="tile">
+            <h2>Hourly Forecast</h2>
+            <ol id="hourlyNumbers">
+                <li>10am: 41&deg;F</li>
+                <li> | 11am: 41&deg;F</li>
+                <li> | 12pm: 41&deg;F</li>
+                <li> | 1pm: 41&deg;F</li>
+                <li> | 2pm: 41&deg;F</li>
+                <li> | 3pm: 41&deg;F</li>
+                <li> | 4pm: 42&deg;F</li>
+                <li> | 5pm: 44&deg;F</li>
+                <li> | 6pm: 46&deg;F</li>
+                <li> | 7pm: 49&deg;F</li>
+                <li> | 8pm: 51&deg;F</li>
+                <li> | 9pm: 55&deg;F</li>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        &copy; 2019, The Weather Site
+    </footer>
+    <script src="js/functions.js"></script>
+</body>
+
+</html>
