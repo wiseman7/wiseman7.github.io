@@ -61,6 +61,11 @@ body {
     text-align: center;
 }
 
+.hide{
+    display: none;
+}
+
+
 #temps > h1 {
     text-align: center;
     list-style: none;
