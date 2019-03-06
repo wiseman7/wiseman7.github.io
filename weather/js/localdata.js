@@ -1,6 +1,6 @@
 // Add 'use strict' directive at the top of the new file
 
-
+let weatherURL = "/weather/js/weather.json";
 fetchData(weatherURL);
 
 
@@ -10,10 +10,10 @@ let contentContainer = document.getElementById('page-content');
 
 
 // fetch function
-let weatherURL = "path/to/weather.json";
+
 function fetchData(weatherURL){
     let cityName = 'Greenville'; 
-    fetch(weatherURL){
+    fetch(weatherURL)
         .then(function(response){
             if(response.ok){
             return response.json();
@@ -68,4 +68,3 @@ function fetchData(weatherURL){
             statusContainer.innerHTML = 'Sorry, the data could not be processed.';
         })
     }
-}

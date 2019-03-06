@@ -191,7 +191,7 @@ let nextHour = date.getHours() + 1;
 // Build the hourly temperature list
 function buildHourlyData(nextHour, hourlyTemps){
   let hourlyListItems = '<li>'+ format_time(nexthour) + ': ' + hourlyTemps[0] + '&deg;F</li>';
-  for (let i = 1; x = hourlyTemps.length; i < x; i++){
+  for (let i = 1, x = hourlyTemps.length; i < x; i++){
     hourlyListItems += '<li>' + format_time(nextHour + i) + ': ' + hourlyTemps[i] + 'deg;F</li>;'
   }
   console.log('HourlyList is: ' +hourlyListItems);
