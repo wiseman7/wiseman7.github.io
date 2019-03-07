@@ -2,6 +2,7 @@
  * Weather Site JavaScript Functions
  **************************************/
 
+'use strict';
     // Variables for Function Use
     const curtemp = 55;
     const speed = 5;
@@ -11,7 +12,7 @@
     const direction = "NNE";
     windDial(direction);
 
-    const phrase = "clear";
+    const phrase = "rain";
     const condition = getCondition(phrase);
     changeSummaryImage(condition);
 
@@ -93,14 +94,14 @@ function windDial(direction){
 // interpret phrase to a single id
 
 function getCondition(phrase){
-   
+   console.log('phrase: ' + phrase);
     if (phrase.includes("cloudy") || phrase.includes("overcast")){
       return "cloudy";
     }
     else if (phrase.includes("clear") || phrase.includes("sunny")){
       return "clear";
     }
-    else if (phrase.includes("rain") || (phrase.includes("thunder")) || phrase.includes("Wet") || phrase.includes("shower")){
+    else if (phrase.includes("rain") || phrase.includes("thunder") || phrase.includes("Wet") || phrase.includes("shower")){
         return "rain";
     }
     else if (phrase.includes("fog")){
@@ -198,17 +199,3 @@ function buildHourlyData(nextHour, hourlyTemps){
   return hourlyListItems;
 }
 
-fetch(URL)
- .then(function(response) {
-   if(response.ok){
-    return response.json();
-   }
-
-   throw new Error('Network response was not OK.');
- })
- .then(function(data){
-
- })
- .catch(function(error){
-   console.log('There was a fetch problem: ', error.message);
- })
