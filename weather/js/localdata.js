@@ -69,7 +69,8 @@ function fetchData(weatherURL){
             console.log('summary-heading: ' + locSummary);
 
             // hourly temp info
-            document.getElementById('hourlyNumbers').innerHTML = locHourly;
+            // document.getElementById('hourTemp').innerHTML = locHourly;
+            // console.log('hourTemp', + locHourly)
 
             // change the status of the containers
             contentContainer.setAttribute('class', ''); // removes hide class
