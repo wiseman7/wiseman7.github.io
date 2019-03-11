@@ -11,16 +11,17 @@ let contentContainer = document.getElementById('page-content');
 
 let weatherURL = "/weather/js/weather.json";
 fetchData(weatherURL);
-function fetchData(weatherURL){
-    let cityName = 'Greenville'; 
+
+function fetchData(weatherURL) {
+    let cityName = 'Greenville';
     fetch(weatherURL)
-        .then(function(response){
-            if(response.ok){
-            return response.json();
-        }
-        throw new ERROR('Network response was not OK.');
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new ERROR('Network response was not OK.');
         })
-        .then(function(data){
+        .then(function (data) {
             console.log(data);
             let g = data[cityName];
 
@@ -42,15 +43,26 @@ function fetchData(weatherURL){
             let locSummary = g.Summary;
 
             // hourly data
+            let d = new Date();
+            let hours = d.getHours();
+            console.log ('hours var' + hours );
             let locHourly = g.Hourly;
+            console.log("hourly: " + locHourly);
+
+            let myOl = document.querySelector('ol');
+            for (var i = 0; i <= locHourly.length - 1; i++) {
+                var myLi = document.createElement('li');
+                myLi.textContent = hours + i + "pm: " + locHourly[i] + "\xB0F | \u00A0";
+                myOl.appendChild(myLi);
+            }
 
             let pageTitle = document.getElementById('page-title');
-            
+
             let fullNameNode = document.createTextNode(fullName);
             pageTitle.insertBefore(fullNameNode, pageTitle.childNodes[0]);
 
             /* HTML */
-            console.log('curtemp1'+ locTemp);
+            console.log('curtemp1' + locTemp);
             // set the location info
 
             // get the h1 to display the city location
@@ -62,7 +74,7 @@ function fetchData(weatherURL){
 
             // wind info
             document.getElementById('speednum').innerHTML = locWind;
-            console.log('speednum ', + locWind);
+            console.log('speednum ', +locWind);
 
             // current conditions info
             document.getElementById('summary-heading').innerHTML = locSummary;
@@ -77,10 +89,8 @@ function fetchData(weatherURL){
             statusContainer.setAttribute('class', 'hide'); // hide status container
         })
         // If there is an error
-        .catch(function(error){
+        .catch(function (error) {
             console.log('There was a fetch problem: ', error.message);
             statusContainer.innerHTML = 'Sorry, the data could not be processed.';
         })
-    }
-
-    
+}
