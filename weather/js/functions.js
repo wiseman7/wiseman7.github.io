@@ -23,7 +23,7 @@
     // calculate wind chill temperature.
  function buildWC(speed, curtemp){
   
-const feelTemp= document.getElementById('feelTemp');
+const feelTemp= document.getElementById('feelTemp1');
 
 // compute the windchill
 let wc = 35.74 + 0.615 * curtemp - 35.75 * Math.pow(speed, 0.16) + 0.4275 * curtemp * Math.pow(speed, 0.16);
