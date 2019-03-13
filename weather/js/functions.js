@@ -49,7 +49,7 @@ feelTemp.innerHTML= wc;
 // Wind Dial Function
 function windDial(direction){
     const windimg = document.getElementById("windimg");
-    console.log(direction)
+    console.log(direction);
 
     // Determine the dial class
     switch (direction){

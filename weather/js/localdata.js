@@ -94,3 +94,4 @@ function fetchData(weatherURL) {
             statusContainer.innerHTML = 'Sorry, the data could not be processed.';
         })
 }
+
