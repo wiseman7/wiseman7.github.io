@@ -9,7 +9,7 @@
 
     buildWC(speed, curtemp);
 
-    const direction = "NNE";
+    const direction = "SW";
     windDial(direction);
 
     const phrase = "rain";
