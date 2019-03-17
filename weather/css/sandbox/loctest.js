@@ -66,4 +66,64 @@ function getLocation(locale) {
 } // end getLocation function
 
 
+/* getStationId() */
+function getStationId(stationsURL) {
+    fetch(stationsURL, idHeader)
+    .then(function(response) {
+        if (response.ok){
+            return response.json();
+        }
+        throw new ERROR('Response not OK.');
+    })
+    .then(function (data){
+        //double check work
+        console.log('From getStationId function:');
+        console.log(data);
+
+        // Store station ID and elevation (in meters - it will need to be converted to feet)
+        let stationId = data.features[0].properties.stationIdentifier;
+        let stationElevation = data.features[0].properties.elevation.value;
+        console.log('Station and Elevation are: ' + stationId, stationElevation);
+
+        //store data in localstorage
+        storage.setItem("stationId", stationId);
+        storage.setItem("stationElevation", stationElevation);
+
+        // request the current weather for this station
+        getWeather(stationId);
+    })
+    .catch(error => console.log('There was a getStationId error: ', error))
+} // end getStationId function
+
+// Gets current weather info fro a specific weather station from the NWS API
+function getWeather(stationId) {
+    // This is the URL for current observation data
+    const URL = 'https://api.weather.gov/stations/' + stationId + '/observations/latest';
+    // NWS User-Agent header (built above) will be the second parameter
+    fetch(URL, idHeader)
+    .then(function(response){
+        if(response.ok){
+            return response.json();
+        }
+        throw new ERROR('Response not OK.');
+    })
+    .then(function (data) {
+        // Check what I get back
+        console.log('From getWeather function: ');
+        console.log(data);
+
+        // Store weather info to localStorage
+        storage.setItem("temerature", temperature);
+        storage.setItem("testDescription", textDiscription);
+        storage.setItem("windChill", windChill);
+        storage.setItem("windDirection", windDirection);
+        storage.setItem("windSpeed", windSpeed);
+        
+
+        // Build the page for viewing
+
+    })
+    .catch(error => console.log('There was a getWeather error: ', error))
+} // end of getWeather function
+
 var storage = window.localStorage;
