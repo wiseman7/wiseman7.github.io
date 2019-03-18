@@ -219,8 +219,7 @@ var storage = window.localStorage;
 // Gets location information from the NWS API
 function getLocation(locale) {
   const URL = "https://api.weather.gov/points/" + locale;
-  // NWS User-Agent header (built above) will
-   be the second parameter 
+  // NWS User-Agent header (built above) will be the second parameter 
   fetch(URL, idHeader)
       .then(function (response) {
           if (response.ok) {
@@ -244,6 +243,7 @@ function getLocation(locale) {
       })
       .catch(error => console.log('There was a getLocation error: ', error))
 } // end getLocation function
+
 
 /********************************Get Station Id****************************/
 
