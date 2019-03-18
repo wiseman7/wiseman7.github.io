@@ -4,12 +4,17 @@
 // Global varibable for a custom header to show where we get the information
 var idHeader = {
     headers: {
-        "User-Agent": "Student Learning Project - wis16002@byui.edu"
+        "User-Agent": "Student Learning Project - wis16002@byui.edu";
     }
 }
 
 // call the function to get our location
 getGeoLocation();
+
+//Get local storage
+var storage = window.localStorage;
+
+
 
 
 
@@ -38,7 +43,7 @@ function getGeoLocation() {
 
 // Get location info from NWS API
 // Gets location information from the NWS API
-function getLocation(locale) {
+/*function getLocation(locale) {
     const URL = "https://api.weather.gov/points/" + locale;
     // NWS User-Agent header (built above) will be the second parameter 
     fetch(URL, idHeader)
@@ -64,10 +69,10 @@ function getLocation(locale) {
         })
         .catch(error => console.log('There was a getLocation error: ', error))
 } // end getLocation function
-
+*/
 
 /* getStationId() */
-function getStationId(stationsURL) {
+/*function getStationId(stationsURL) {
     fetch(stationsURL, idHeader)
     .then(function(response) {
         if (response.ok){
@@ -94,9 +99,11 @@ function getStationId(stationsURL) {
     })
     .catch(error => console.log('There was a getStationId error: ', error))
 } // end getStationId function
+*/
+
 
 // Gets current weather info fro a specific weather station from the NWS API
-function getWeather(stationId) {
+/*function getWeather(stationId) {
     // This is the URL for current observation data
     const URL = 'https://api.weather.gov/stations/' + stationId + '/observations/latest';
     // NWS User-Agent header (built above) will be the second parameter
@@ -125,3 +132,4 @@ function getWeather(stationId) {
     })
     .catch(error => console.log('There was a getWeather error: ', error))
 } // end of getWeather function
+*/
