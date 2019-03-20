@@ -4,7 +4,7 @@
 // Global varibable for a custom header to show where we get the information
 var idHeader = {
     headers: {
-        "User-Agent": "Student Learning Project - wis16002@byui.edu";
+        "User-Agent": "Student Learning Project - wis16002@byui.edu"
     }
 }
 

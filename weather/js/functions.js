@@ -3,6 +3,10 @@
  **************************************/
 
 'use strict';
+let pageNav = document.getElementById('page-nav');
+let statusContainer = document.getElementById('status');
+let contentContainer = document.getElementById('page-content');
+
     // Variables for Function Use
     const curtemp = 55;
     const speed = 5;
@@ -192,7 +196,8 @@ let nextHour = date.getHours() + 1;
 // Build the hourly temperature list
 function buildHourlyData(nextHour, hourlyTemps){
   let hourlyListItems = '<li>'+ format_time(nexthour) + ': ' + hourlyTemps[0] + '&deg;F</li>';
-  for (let i = 1, x = hourlyTemps.length; i < x; i++){
+  // for (let i = 1, x = hourlyTemps.length; i < x; i++){
+    for (let i = 1, x = 13; i < x; i++){
     hourlyListItems += '<li>' + format_time(nextHour + i) + ': ' + hourlyTemps[i] + 'deg;F</li>;'
   }
   console.log('HourlyList is: ' +hourlyListItems);
@@ -204,7 +209,7 @@ function buildHourlyData(nextHour, hourlyTemps){
 // Header Id
 var idHeader = {
   headers: {
-      "User-Agent": "Student Learning Project - wis16002@byui.edu";
+      "User-Agent": "Student Learning Project - wis16002@byui.edu"
   }
 }
 
@@ -230,10 +235,12 @@ function getLocation(locale) {
       .then(function (data) {
           // Let's see what we got back
           console.log('Json object from getLocation function:');
-          console.log(data);
+          console.log('data: ', data);
           // Store data to localstorage 
           storage.setItem("locName", data.properties.relativeLocation.properties.city);
           storage.setItem("locState", data.properties.relativeLocation.properties.state);
+
+        getHourly(data.properties.forecastHourly);
 
           // Next, get the weather station ID before requesting current conditions 
           // URL for station list is in the data object 
@@ -263,6 +270,8 @@ function getStationId(stationsURL) {
 
       // Store station ID and elevation (in meters - it will need to be converted to feet)
       let stationId = data.features[0].properties.stationIdentifier;
+
+      console.log('station id ', stationId);
       let stationElevation = data.features[0].properties.elevation.value;
       console.log('Station and Elevation are: ' + stationId, stationElevation);
 
@@ -298,11 +307,11 @@ function getWeather(stationId) {
       console.log(data);
 
       // Store weather info to localStorage
-      storage.setItem("temerature", temperature);
-      storage.setItem("testDescription", textDiscription);
-      storage.setItem("windChill", windChill);
-      storage.setItem("windDirection", windDirection);
-      storage.setItem("windSpeed", windSpeed);
+      // storage.setItem("temerature", temperature);
+      // storage.setItem("testDescription", textDiscription);
+      // storage.setItem("windChill", windChill);
+      // storage.setItem("windDirection", windDirection);
+      // storage.setItem("windSpeed", windSpeed);
       
 
       // Build the page for viewing
@@ -310,3 +319,35 @@ function getWeather(stationId) {
   })
   .catch(error => console.log('There was a getWeather error: ', error))
 } // end of getWeather function
+
+function getHourly(URL) {
+  fetch(URL)
+  .then(function(response){
+      if(response.ok){
+          return response.json();
+      }
+      throw new ERROR('Response not OK.');
+  })
+  .then(function (data) {
+      // Check what I get back
+      console.log('From getHourly function: ');
+      console.log('data', data);
+  
+  let hourly = data.properties.periods;
+  let ol = document.querySelector('ol');
+  for (var i = 0; i < 12; i++)
+  {
+    console.log('hourly', hourly[i].temperature);
+    let li = document.createElement('li');
+    
+    li.textContent = hourly[i].temperature + "\xB0F";
+    ol.appendChild(li);
+  }    
+  console.log('ol: ', ol);
+  contentContainer.setAttribute('class', ''); // removes hide class
+  statusContainer.setAttribute('class', 'hide');
+  //console.log('URL: ', URL);
+})
+.catch(error => console.log('There was a getWeather error: ', error))
+
+}
