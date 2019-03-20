@@ -8,26 +8,26 @@ let statusContainer = document.getElementById('status');
 let contentContainer = document.getElementById('page-content');
 
 // Variables for Function Use
-const curtemp = 55;
-const speed = 5;
+// const curtemp = 55;
+// const speed = 5;
 
-buildWC(speed, curtemp);
+// buildWC(speed, curtemp);
 
-const direction = "SW";
-windDial(direction);
+// //const direction = "SW";
+// windDial(direction);
 
-const phrase = "rain";
-const condition = getCondition(phrase);
-changeSummaryImage(condition);
+// //const phrase = "rain";
+// const condition = getCondition(phrase);
+// changeSummaryImage(condition);
 
-const meters = 25;
-convertMeters(meters);
+// const meters = 25;
+// convertMeters(meters);
 
 
 // calculate wind chill temperature.
 function buildWC(speed, curtemp) {
 
-  const feelTemp = document.getElementById('feelTemp1');
+  //const feelTemp = document.getElementById('feelTemp1');
 
   // compute the windchill
   let wc = 35.74 + 0.615 * curtemp - 35.75 * Math.pow(speed, 0.16) + 0.4275 * curtemp * Math.pow(speed, 0.16);
@@ -41,13 +41,13 @@ function buildWC(speed, curtemp) {
 
   // Display windchill
   console.log(wc);
-  feelTemp.innerHTML = wc;
+  //feelTemp.innerHTML = wc;
 
   // wc = 'Feels like '+wc+' F;
-  wc = 'Feels like ' + wc + '&deg;F';
-  feelTemp.innerHTML = wc;
+  // wc = 'Feels like ' + wc + '&deg;F';
+  //feelTemp.innerHTML = wc;
 
-
+  return wc;
 }
 
 // Wind Dial Function
@@ -101,7 +101,7 @@ function getCondition(phrase) {
   console.log('phrase: ' + phrase);
   if (phrase.includes("cloudy") || phrase.includes("overcast")) {
     return "cloudy";
-  } else if (phrase.includes("clear") || phrase.includes("sunny")) {
+  } else if (phrase.includes("clear") || phrase.includes("Sunny")) {
     return "clear";
   } else if (phrase.includes("rain") || phrase.includes("thunder") || phrase.includes("Wet") || phrase.includes("shower")) {
     return "rain";
@@ -236,7 +236,7 @@ function getLocation(locale) {
       storage.setItem("locState", data.properties.relativeLocation.properties.state);
 
       getHourly(data.properties.forecastHourly);
-
+      getWeather(data.properties.forecastHourly);
       // Next, get the weather station ID before requesting current conditions 
       // URL for station list is in the data object 
       let stationsURL = data.properties.observationStations;
@@ -275,7 +275,7 @@ function getStationId(stationsURL) {
       storage.setItem("stationElevation", stationElevation);
 
       // request the current weather for this station
-      getWeather(stationId);
+      //getWeather(stationId);
     })
     .catch(error => console.log('There was a getStationId error: ', error))
 } // end getStationId function
@@ -287,9 +287,10 @@ function getStationId(stationsURL) {
 // Gets current weather info fro a specific weather station from the NWS API
 function getWeather(stationId) {
   // This is the URL for current observation data
-  const URL = 'https://api.weather.gov/stations/' + stationId + '/observations/latest';
+  //const URL = 'https://api.weather.gov/stations/' + stationId + '/observations/latest';
   // NWS User-Agent header (built above) will be the second parameter
-  fetch(URL, idHeader)
+  //fetch(URL, idHeader)
+  fetch(stationId)
     .then(function (response) {
       if (response.ok) {
         return response.json();
@@ -300,16 +301,21 @@ function getWeather(stationId) {
       // Check what I get back
       console.log('From getWeather function: ');
       console.log('data', data);
-
+      var info = data.properties.periods[0];
+      console.log('information: ', info);
       // Store weather info to localStorage
-      storage.setItem('temerature', data.properties.temperature.value);
-      storage.setItem('testDescription', data.properties.textDiscription);
-      // storage.setItem("windChill", windChill);
-      storage.setItem('windDirection', data.properties.windDirection.value);
-      storage.setItem('windSpeed', data.properties.windSpeed.value);
+      storage.setItem('temp', info.temperature);
+
+      storage.setItem('shortForecast', info.shortForecast);
+      var speed = parseInt(info.windSpeed);
+      let wc = buildWC(speed, info.temperature);
+      storage.setItem('windchill', wc);
+      storage.setItem('windDirection', info.windDirection);
+      storage.setItem('windSpeed', info.windSpeed);
 
 
       // Build the page for viewing
+      buildPage();
 
     })
     .catch(error => console.log('There was a getWeather error: ', error))
@@ -329,14 +335,20 @@ function getHourly(URL) {
       console.log('From getHourly function: ');
       console.log('data', data);
 
+      var d = new Date();
+      var hour = d.getHours();
       let hourly = data.properties.periods;
       let ol = document.querySelector('ol');
       for (var i = 0; i < 12; i++) {
         console.log('hourly', hourly[i].temperature);
         let li = document.createElement('li');
 
-        li.textContent = hourly[i].temperature + "\xB0F";
+        if(hour==24){
+          hour = 0;
+        }
+        li.textContent = hour + ":00 " + hourly[i].temperature + "\xB0F";
         ol.appendChild(li);
+        hour++;
       }
       console.log('ol: ', ol);
       contentContainer.setAttribute('class', ''); // removes hide class
@@ -345,4 +357,33 @@ function getHourly(URL) {
     })
     .catch(error => console.log('There was a getWeather error: ', error))
 
+}
+
+function convertToFahrenheit(temp) {
+  var celius = Math.round((temp - 32) * (5 / 9));
+  return celius;
+}
+
+function buildPage() {
+  var temp = storage.getItem('temp');
+  var wichill = storage.getItem('windchill');
+  var direction = storage.getItem('windDirection');
+  var phrase = storage.getItem('shortForecast');
+  var wispeed = storage.getItem('windSpeed');
+
+  temp = parseFloat(temp);
+  windDial(direction);
+
+  //const phrase = "rain";
+  const condition = getCondition(phrase);
+  changeSummaryImage(condition);
+
+  const meters = 25;
+  convertMeters(meters);
+
+  document.getElementById('curtemp1').innerHTML = temp;
+  document.getElementById('feelTemp1').innerHTML = wichill;
+  document.getElementById('speednum').innerHTML = wispeed;
+  document.getElementById('direction').innerHTML = direction;
+  document.getElementById('summary-heading').innerHTML = phrase;
 }
