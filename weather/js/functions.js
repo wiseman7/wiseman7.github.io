@@ -99,15 +99,15 @@ function windDial(direction) {
 
 function getCondition(phrase) {
   console.log('phrase: ' + phrase);
-  if (phrase.includes("cloudy") || phrase.includes("overcast")) {
+  if (phrase.includes("Cloudy") || phrase.includes("Overcast")) {
     return "cloudy";
-  } else if (phrase.includes("clear") || phrase.includes("Sunny")) {
+  } else if (phrase.includes("Clear") || phrase.includes("Sunny")) {
     return "clear";
-  } else if (phrase.includes("rain") || phrase.includes("thunder") || phrase.includes("Wet") || phrase.includes("shower")) {
+  } else if (phrase.includes("Rain") || phrase.includes("Thunder") || phrase.includes("Wet") || phrase.includes("Shower")) {
     return "rain";
-  } else if (phrase.includes("fog")) {
+  } else if (phrase.includes("Fog")) {
     return "fog";
-  } else if (phrase.includes("snow")) {
+  } else if (phrase.includes("Snow")) {
     return "snow";
   }
 
