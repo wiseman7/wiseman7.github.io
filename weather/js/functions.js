@@ -190,10 +190,10 @@ let nextHour = date.getHours() + 1;
 
 // Build the hourly temperature list
 function buildHourlyData(nextHour, hourlyTemps) {
-  let hourlyListItems = '<li>' + format_time(nexthour) + ': ' + hourlyTemps[0] + '&deg;F</li>';
+  let hourlyListItems = '<li>' + format_time(nextHour) + ': ' + hourlyTemps[0] + '&deg;F | </li>';
   // for (let i = 1, x = hourlyTemps.length; i < x; i++){
   for (let i = 1, x = 13; i < x; i++) {
-    hourlyListItems += '<li>' + format_time(nextHour + i) + ': ' + hourlyTemps[i] + 'deg;F</li>;'
+    hourlyListItems += '<li>' + format_time(nextHour + i) + ': ' + hourlyTemps[i] + '&deg;F | </li>'
   }
   console.log('HourlyList is: ' + hourlyListItems);
   return hourlyListItems;
@@ -313,6 +313,10 @@ function getWeather(stationId) {
       storage.setItem('windDirection', info.windDirection);
       storage.setItem('windSpeed', info.windSpeed);
 
+      // High and low temp
+      //storage.setItem('temeratureHigh', info.temperature);
+      storage.setItem('temperatureLow', data.properties.periods[1].temperature);
+
 
       // Build the page for viewing
       buildPage();
@@ -336,26 +340,37 @@ function getHourly(URL) {
       console.log('data', data);
 
       var d = new Date();
-      var hour = d.getHours();
-      let hourly = data.properties.periods;
-      let ol = document.querySelector('ol');
-      for (var i = 0; i < 12; i++) {
-        console.log('hourly', hourly[i].temperature);
-        let li = document.createElement('li');
-
-        if(hour==24){
-          hour = 0;
-        }
-        li.textContent = hour + ":00 " + hourly[i].temperature + "\xB0F";
-        ol.appendChild(li);
-        hour++;
+      var hour = d.getHours() + 1;
+      // console.log(hour);
+      let Allhourly = data.properties.periods;
+      let hourly = []
+      // console.log(Allhourly[0]);
+      for (let i = 0; i < 13; i++)
+      {
+        hourly.push(Allhourly[i].temperature);
       }
-      console.log('ol: ', ol);
+
+      
+      let ol = document.querySelector('ol');
+      // console.log(hour);
+      ol.innerHTML = buildHourlyData(hour, hourly);
+      // for (var i = 0; i < 12; i++) {
+      //   console.log('hourly', hourly[i].temperature);
+      //   let li = document.createElement('li');
+
+      //   if(hour==24){
+      //     hour = 0;
+      //   }
+      //   li.textContent = hour + ":00 " + hourly[i].temperature + "\xB0F";
+      //   ol.appendChild(li);
+      //   hour++;
+      // }
+      // console.log('ol: ', ol);
       contentContainer.setAttribute('class', ''); // removes hide class
       statusContainer.setAttribute('class', 'hide');
       //console.log('URL: ', URL);
     })
-    .catch(error => console.log('There was a getWeather error: ', error))
+    .catch(error => console.log('There was a getHourly error: ', error))
 
 }
 
@@ -370,7 +385,11 @@ function buildPage() {
   var direction = storage.getItem('windDirection');
   var phrase = storage.getItem('shortForecast');
   var wispeed = storage.getItem('windSpeed');
-
+  var titlename = storage.getItem('locName');
+  var titlestate = storage.getItem('locState');
+  var displaytitle = titlename + ', ' + titlestate;
+  //var hightemp = storage.getItem('temperatureHigh');
+  var lowtemp = storage.getItem('temperatureLow');
   temp = parseFloat(temp);
   windDial(direction);
 
@@ -386,4 +405,9 @@ function buildPage() {
   document.getElementById('speednum').innerHTML = wispeed;
   document.getElementById('direction').innerHTML = direction;
   document.getElementById('summary-heading').innerHTML = phrase;
+  document.getElementById('locName').innerHTML= displaytitle;
+  // document.getElementById('locState').innerHTML = titlestate;
+  //document.getElementById('high1').innerHTML = hightemp;
+  document.getElementById('high1').innerHTML = temp;
+  document.getElementById('low1').innerHTML = lowtemp;
 }
