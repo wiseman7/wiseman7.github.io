@@ -160,7 +160,7 @@ function convertMeters(meters) {
   const feet = 3.28 * meters;
   const round = Math.round(feet);
 
-  document.getElementById("convertMeters").innerHTML = round;
+  document.getElementById("meters").innerHTML = round;
 }
 
 
@@ -303,6 +303,11 @@ function getWeather(stationId) {
       console.log('data', data);
       var info = data.properties.periods[0];
       console.log('information: ', info);
+
+      // elevation
+      var meters = data.properties.elevation.value;
+      let transfermeters = convertMeters(meters);
+
       // Store weather info to localStorage
       storage.setItem('temp', info.temperature);
 
@@ -345,12 +350,11 @@ function getHourly(URL) {
       let Allhourly = data.properties.periods;
       let hourly = []
       // console.log(Allhourly[0]);
-      for (let i = 0; i < 13; i++)
-      {
+      for (let i = 0; i < 13; i++) {
         hourly.push(Allhourly[i].temperature);
       }
 
-      
+
       let ol = document.querySelector('ol');
       // console.log(hour);
       ol.innerHTML = buildHourlyData(hour, hourly);
@@ -397,15 +401,16 @@ function buildPage() {
   const condition = getCondition(phrase);
   changeSummaryImage(condition);
 
-  const meters = 25;
-  convertMeters(meters);
-
+  //const meters = 25;
+ 
+  
+  //document.getElementById('meters').innerHTML = transfermeters;
   document.getElementById('curtemp1').innerHTML = temp;
   document.getElementById('feelTemp1').innerHTML = wichill;
   document.getElementById('speednum').innerHTML = wispeed;
   document.getElementById('direction').innerHTML = direction;
   document.getElementById('summary-heading').innerHTML = phrase;
-  document.getElementById('locName').innerHTML= displaytitle;
+  document.getElementById('locName').innerHTML = displaytitle;
   // document.getElementById('locState').innerHTML = titlestate;
   //document.getElementById('high1').innerHTML = hightemp;
   document.getElementById('high1').innerHTML = temp;
