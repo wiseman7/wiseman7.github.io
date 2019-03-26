@@ -416,3 +416,7 @@ function buildPage() {
   document.getElementById('high1').innerHTML = temp;
   document.getElementById('low1').innerHTML = lowtemp;
 }
+
+// change title browser
+// add more comments
+// fix css
