@@ -1,0 +1,31 @@
+
+/*Imports*/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+
+/* General Rules */
+
+nav {
+    background-color: #de2226;
+    width: 80%;
+}
+
+nav ul{
+    /* display:flex;
+    justify-content: space-around; */
+    padding: 0;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav a {
+    color: #ffffff;
+}
+
+/* Mobile First
+need to use flexbox to provide responsive layouts to small and large screens sizes
+use a minimum of one media query for larger than mobile screen sizes. */
+
+/* Large Screens */
