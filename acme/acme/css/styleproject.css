@@ -6,17 +6,23 @@
 /* General Rules */
 
 nav {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
     background-color: #de2226;
     width: 80%;
 }
 
 nav ul{
-    /* display:flex;
-    justify-content: space-around; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     padding: 0;
 }
 
 nav ul li{
+    display: flex;
+    flex-direction: row;
     list-style: none;
 }
 
