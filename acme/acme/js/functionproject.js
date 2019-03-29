@@ -1,25 +1,28 @@
 
+'use strict';
+
 
 /*************************JSON************************************* */
- 
-function tabs(){
-//define URL
 
+let acmeURL = "../js/acme.json";
+fetchData(acmeURL);
 
-fetch(URL)
-    .then(function (response) {
-        if (response.ok) {
-            return response.json();
-        }
-        throw new Error('Response not OK.');
-    })
-    .then(function (data){
-        // See what we got back
-        console.log('Json object from tabs function: ', data);
+function fetchData(acmeURL) {
+    fetch(acmeURL)
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new ERROR('Network response was not OK.');
+        })
+        .then(function (data) {
+            console.log(data);
 
-        //store in variables
-        var anvils = data.anvils.name;
-        console.log('name anvils: ', anvils);
+        })
 
-    })
+        
+// If there is an error
+.catch(function (error) {
+    console.log('There was a fetch problem: ', error.message);
+})
 }
