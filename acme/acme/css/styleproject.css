@@ -29,6 +29,12 @@ h1, div {
     font-family: 'Noto Sans SC', sans-serif;
 }
 
+div, ul {
+    list-style: none;
+    color: #990033;
+}
+
+
 /* Mobile First
 need to use flexbox to provide responsive layouts to small and large screens sizes
 use a minimum of one media query for larger than mobile screen sizes. */
