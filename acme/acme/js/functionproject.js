@@ -1,11 +1,6 @@
 'use strict';
 
-document.querySelector("body").addEventListener('click', function (e) {
-    var anchor = e.target.closest('a');
-    if (anchor !== null) {
-        console.log(anchor.textContent);
-    }
-}, false);
+
 
 /*************************JSON************************************* */
 
@@ -16,18 +11,31 @@ function fetchData(acmeURL) {
     fetch(acmeURL)
         .then(function (response) {
             if (response.ok) {
-                return response.json();
+                var result = response.json();
+                console.log('result', result);
+                return result;
             }
             throw new ERROR('Network response was not OK.');
         })
         .then(function (data) {
             console.log(data);
            
-           
+            document.querySelector("body").addEventListener('click', function (e) {
+                var anchor = e.target.closest('a');
+                if (anchor !== null) {
+                    console.log(anchor.textContent);
+                    if (anchor.textContent == "Anvils"){
+                        console.log(data.Anvils);
+                       document.getElementById('product-name').innerHTML = data.Anvils.name;
+                    }
+                }
+            }, false);   
 
         })
 
         // Json
+
+
 
         // let product-name = ____.name;
         // let product-image=__________.path;
