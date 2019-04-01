@@ -9,7 +9,7 @@ document.querySelector("body").addEventListener('click', function (e) {
 
 /*************************JSON************************************* */
 
-let acmeURL = "../js/acme.json";
+let acmeURL = "/acme/acme/js/acme.json";
 fetchData(acmeURL);
 
 function fetchData(acmeURL) {
