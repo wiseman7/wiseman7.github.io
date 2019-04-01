@@ -29,9 +29,41 @@ h1, div {
     font-family: 'Noto Sans SC', sans-serif;
 }
 
-div, ul {
+#banner > ul {
     list-style: none;
     color: #990033;
+}
+
+#list-banner {
+    background-color: rgba(255,255,255, 0.3);
+    font-size: 2vw;
+}
+
+#list-banner img {
+    width: 20vw;
+    height: auto;
+}
+
+table {
+    text-align: center;
+}
+
+.gray {
+    background-color: #808080;
+}
+
+table a {
+    text-decoration: none;
+    color: blue;
+}
+
+/* Container */
+.hide {
+    display: none;
+}
+
+.list-title{
+    font-weight: bold;
 }
 
 
@@ -76,10 +108,10 @@ main h1{
     right: 25px;
 }
 
-#actionbtn img {
+/* #actionbtn img {
     height: 10px;
     width: 50px;
-}
+} */
 
 footer {
     text-align: center;
@@ -92,4 +124,20 @@ hr {
     background-color: #000;
 }
 
+
+
 /* Large Screens */
+@media only screen and (min-width: 600px){
+
+
+#list-banner {
+    background-color: transparent;
+}
+
+#bottom {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    
+}
+}
