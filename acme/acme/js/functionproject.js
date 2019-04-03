@@ -1,5 +1,9 @@
+// Put strict at the top of the document
 'use strict';
 
+
+let productContainer = document.getElementById('product-content');
+let homeContainer = document.getElementById('principal-home');
 
 
 /*************************JSON************************************* */
@@ -19,17 +23,40 @@ function fetchData(acmeURL) {
         })
         .then(function (data) {
             console.log(data);
-           
+
             document.querySelector("body").addEventListener('click', function (e) {
                 var anchor = e.target.closest('a');
                 if (anchor !== null) {
                     console.log(anchor.textContent);
-                    if (anchor.textContent == "Anvils"){
+                    var home = 0;
+                    if (anchor.textContent == "Anvils") {
                         console.log(data.Anvils);
-                       document.getElementById('product-name').innerHTML = data.Anvils.name;
+                        document.getElementById('product-name').innerHTML = data.Anvils.name;
+                        document.getElementById('product-image').src = data.Anvils.path;
+                        document.getElementById('product-description').innerHTML = data.Anvils.description;
+                        document.getElementById('manufacturer').innerHTML = data.Anvils.manufacturer;
+                        document.getElementById('reviews').innerHTML = data.Anvils.reviews;
+                        document.getElementById('price').innerHTML = data.Anvils.price;
+                    } else if (anchor.textContent == "Explosives") {
+                        console.log(data.Explosives);
+                        document.getElementById('product-name').innerHTML = data.Explosives.name;
+                        document.getElementById('product-image').src = data.Explosives.path;
+                        document.getElementById('product-description').innerHTML = data.Explosives.description;
+                        document.getElementById('manufacturer').innerHTML = data.Explosives.manufacturer;
+                        document.getElementById('reviews').innerHTML = data.Explosives.reviews;
+                        document.getElementById('price').innerHTML = data.Explosives.price;
+                    } else {
+                        home = 1;
                     }
                 }
-            }, false);   
+                if (home == 0) {
+                    productContainer.setAttribute('class', ''); // removes hide class
+                    homeContainer.setAttribute('class', 'hide'); // hide home container
+                } else {
+                    productContainer.setAttribute('class', 'hide'); // removes hide class
+                    homeContainer.setAttribute('class', ''); // hide home container
+                }
+            }, false);
 
         })
 
@@ -59,3 +86,20 @@ function fetchData(acmeURL) {
             console.log('There was a fetch problem: ', error.message);
         })
 }
+
+
+
+// let product-image = info.path;
+// console.log('product image', product-image);
+
+// let product-description = info.description;
+// console.log('product description', product-description);
+
+// let manufacturer = info.manufacturer;
+// console.log('manfacturer', manufacturer);
+
+// let reviews = info.reviews;
+// console.log('reviews', reviews);
+
+// let price = info.price;
+// console.log('price', price);

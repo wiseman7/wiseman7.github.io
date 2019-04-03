@@ -66,6 +66,9 @@ table a {
     font-weight: bold;
 }
 
+#product-content img{
+    width: 100%;
+}
 
 /* Mobile First
 need to use flexbox to provide responsive layouts to small and large screens sizes
@@ -129,7 +132,10 @@ hr {
 /* Large Screens */
 @media only screen and (min-width: 600px){
 
-
+#product-container {
+    display: flex;
+    flex-direction: row;
+}
 #list-banner {
     background-color: transparent;
 }

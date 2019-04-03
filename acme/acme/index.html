@@ -7,6 +7,11 @@
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="/acme/acme/css/styleproject.css">
+  <style>
+    .hide {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -16,8 +21,8 @@
     </header>
     <nav>
       <ul>
-        <li id="home"><a href="#" >Home</a></li>
-        <li id="anvils"><a href="#" >Anvils</a></li>
+        <li id="home"><a href="#">Home</a></li>
+        <li id="anvils"><a href="#">Anvils</a></li>
         <li id="explosives"><a href="#">Explosives</a></li>
         <li id="decoys"><a href="#">Decoys</a></li>
         <li id="traps"><a href="#">Traps</a></li>
@@ -27,88 +32,94 @@
 
     <div id="product-content" class="hide">
       <h1 id="product-name"></h1>
-      <img src="" alt="" id="product-image">
-      <p id="product-description"></p>
-      <p class="list-title">Made by: <span id="manufacturer">Company Name</span></p>
-      <p class="list-title">Reviews: <span id="reviews">number of stars</span> stars</p>
+      <div id="product-container">
+        <div>
+          <img src="" alt="" id="product-image">
+        </div>
+        <div>
+          <p id="product-description"></p>
+          <p class="list-title">Made by: <span id="manufacturer">Company Name</span></p>
+          <p class="list-title">Reviews: <span id="reviews">number of stars</span> stars</p>
 
-      <p id="price-css">Price: $<span id="price">100.00</span></p>
-
+          <p id="price-css">Price: $<span id="price">100.00</span></p>
+        </div>
+      </div>
     </div>
 
-    <h1>
-      Welcome to Acme!
-    </h1>
-    <div id="banner">
-      <img src="images/site/feature-o.jpg" alt="acme rocket">
-      <ul id="list-banner">
-        <li>
-          <h2>Acme Rocket</h2>
-        </li>
-        <li>Quick lighting fuse</li>
-        <li>NHTSA approved seat belts</li>
-        <li>Mobile launch stand included</li>
-        <li id="actionbtn"><a href="#"><img alt="Add to cart button" src="images/site/iwantit-o.png"></a></li>
-      </ul>
-    </div>
-    <div id="bottom">
-      <div>
-
-        <h2>Hero Product Review text</h2>
-        <ul>
-          <li>"I don't know how I ever caught roadrunners before this." (9/10)</li>
-          <li>"That thing was fast!" (4/5)</li>
-          <li>"Talk about fast delivery." (5/5)</li>
-          <li>"I didn't even have to pull the meat apart." (4.5/5)</li>
-          <li>"I'm on my thirtieth one. I love these things!" (5/5)</li>
+    <div id="principal-home">
+      <h1>
+        Welcome to Acme!
+      </h1>
+      <div id="banner">
+        <img src="images/site/feature-o.jpg" alt="acme rocket">
+        <ul id="list-banner">
+          <li>
+            <h2>Acme Rocket</h2>
+          </li>
+          <li>Quick lighting fuse</li>
+          <li>NHTSA approved seat belts</li>
+          <li>Mobile launch stand included</li>
+          <li id="actionbtn"><a href="#"><img alt="Add to cart button" src="images/site/iwantit-o.png"></a></li>
         </ul>
       </div>
-      <div>
-        <h2>Feature Recipes</h2>
-        <table>
-          <tr class='gray'>
-            <td>
-              <img src="images/recipes/bbqsand-o.jpg" alt="roadrunner bbq">
-            </td>
-            <td>
-              <img src="images/recipes/potpie-o.jpg" alt="roadrunner pot pie">
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a href="#">Pulled Roadrunner BBQ</a>
-            </td>
-            <td>
-              <a href="#">Roadrunner Pot Pie</a>
-            </td>
-          </tr>
-          <tr class='gray'>
-            <td>
-              <img src="images/recipes/soup-o.jpg" alt="roadrunner soup">
-            </td>
-            <td>
-              <img src="images/recipes/taco-o.jpg" alt="roadrunner tacos">
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a href="#">Roadrunner Soup</a>
-            </td>
-            <td>
-              <a href="#">Roadrunner Tacos</a>
-            </td>
-          </tr>
-        </table>
+      <div id="bottom">
+        <div>
 
+          <h2>Hero Product Review text</h2>
+          <ul>
+            <li>"I don't know how I ever caught roadrunners before this." (9/10)</li>
+            <li>"That thing was fast!" (4/5)</li>
+            <li>"Talk about fast delivery." (5/5)</li>
+            <li>"I didn't even have to pull the meat apart." (4.5/5)</li>
+            <li>"I'm on my thirtieth one. I love these things!" (5/5)</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Feature Recipes</h2>
+          <table>
+            <tr class='gray'>
+              <td>
+                <img src="images/recipes/bbqsand-o.jpg" alt="roadrunner bbq">
+              </td>
+              <td>
+                <img src="images/recipes/potpie-o.jpg" alt="roadrunner pot pie">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#">Pulled Roadrunner BBQ</a>
+              </td>
+              <td>
+                <a href="#">Roadrunner Pot Pie</a>
+              </td>
+            </tr>
+            <tr class='gray'>
+              <td>
+                <img src="images/recipes/soup-o.jpg" alt="roadrunner soup">
+              </td>
+              <td>
+                <img src="images/recipes/taco-o.jpg" alt="roadrunner tacos">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#">Roadrunner Soup</a>
+              </td>
+              <td>
+                <a href="#">Roadrunner Tacos</a>
+              </td>
+            </tr>
+          </table>
+
+        </div>
       </div>
+      </main>
     </div>
-    </main>
-
     <footer>
       <hr>&copy; 2019 ACME Inc., All rights reserved.</footer>
 
     <script src='js/functionproject.js'></script>
-  </div>
+
 </body>
 
 </html>
