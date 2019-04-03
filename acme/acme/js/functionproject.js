@@ -29,6 +29,8 @@ function fetchData(acmeURL) {
                 if (anchor !== null) {
                     console.log(anchor.textContent);
                     var home = 0;
+
+                    //Anvils
                     if (anchor.textContent == "Anvils") {
                         console.log(data.Anvils);
                         document.getElementById('product-name').innerHTML = data.Anvils.name;
@@ -37,7 +39,9 @@ function fetchData(acmeURL) {
                         document.getElementById('manufacturer').innerHTML = data.Anvils.manufacturer;
                         document.getElementById('reviews').innerHTML = data.Anvils.reviews;
                         document.getElementById('price').innerHTML = data.Anvils.price;
-                    } else if (anchor.textContent == "Explosives") {
+                    } 
+                    //Explosives
+                    else if (anchor.textContent == "Explosives") {
                         console.log(data.Explosives);
                         document.getElementById('product-name').innerHTML = data.Explosives.name;
                         document.getElementById('product-image').src = data.Explosives.path;
@@ -45,7 +49,18 @@ function fetchData(acmeURL) {
                         document.getElementById('manufacturer').innerHTML = data.Explosives.manufacturer;
                         document.getElementById('reviews').innerHTML = data.Explosives.reviews;
                         document.getElementById('price').innerHTML = data.Explosives.price;
-                    } else {
+                    }
+                    // Decoys 
+                    else if (anchor.textContent == "Decoys") {
+                        console.log(data.Decoys);
+                        document.getElementById('product-name').innerHTML = data.Decoys.name;
+                        document.getElementById('product-image').src = data.Decoys.path;
+                        document.getElementById('product-description').innerHTML = data.Decoys.description;
+                        document.getElementById('manufacturer').innerHTML = data.Decoys.manufacturer;
+                        document.getElementById('reviews').innerHTML = data.Decoys.reviews;
+                        document.getElementById('price').innerHTML = data.Decoys.price;
+                    }
+                    else {
                         home = 1;
                     }
                 }
