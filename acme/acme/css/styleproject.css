@@ -70,6 +70,12 @@ table a {
     width: 100%;
 }
 
+#price-css {
+    color: #de2226;
+    font-size: 7vw;
+
+}
+
 /* Mobile First
 need to use flexbox to provide responsive layouts to small and large screens sizes
 use a minimum of one media query for larger than mobile screen sizes. */

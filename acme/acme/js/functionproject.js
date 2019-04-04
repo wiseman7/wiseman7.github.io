@@ -60,6 +60,19 @@ function fetchData(acmeURL) {
                         document.getElementById('reviews').innerHTML = data.Decoys.reviews;
                         document.getElementById('price').innerHTML = data.Decoys.price;
                     }
+
+                    // Traps
+                    else if (anchor.textContent == "Traps") {
+                        console.log(data.Decoys);
+                        document.getElementById('product-name').innerHTML = data.Traps.name;
+                        document.getElementById('product-image').src = data.Traps.path;
+                        document.getElementById('product-description').innerHTML = data.Traps.description;
+                        document.getElementById('manufacturer').innerHTML = data.Traps.manufacturer;
+                        document.getElementById('reviews').innerHTML = data.Traps.reviews;
+                        document.getElementById('price').innerHTML = data.Traps.price;
+                    }
+
+
                     else {
                         home = 1;
                     }
