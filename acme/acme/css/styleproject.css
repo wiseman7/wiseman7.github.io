@@ -50,7 +50,9 @@ table {
 }
 
 .gray {
-    background-color: #808080;
+     background-color: #808080; 
+    background-color: rgba(122, 122, 122, 0.3);
+    /* opacity: 0.3; */
 }
 
 table a {
