@@ -4,6 +4,8 @@
 
 let productContainer = document.getElementById('product-content');
 let homeContainer = document.getElementById('principal-home');
+let pagetitle = document.getElementById('pagetitle').innerHTML = "ACME";
+console.log('page-title', pagetitle);
 
 
 /*************************JSON************************************* */
@@ -39,7 +41,7 @@ function fetchData(acmeURL) {
                         document.getElementById('manufacturer').innerHTML = data.Anvils.manufacturer;
                         document.getElementById('reviews').innerHTML = data.Anvils.reviews;
                         document.getElementById('price').innerHTML = data.Anvils.price;
-                        let pagetitle = document.getElementById('pagetitle').innerHTML = "Acme-Anvils";
+                        let pagetitle = document.getElementById('pagetitle').innerHTML = "ACME-Anvils";
                         console.log('page-title', pagetitle);
                     } 
                     //Explosives
@@ -51,7 +53,7 @@ function fetchData(acmeURL) {
                         document.getElementById('manufacturer').innerHTML = data.Explosives.manufacturer;
                         document.getElementById('reviews').innerHTML = data.Explosives.reviews;
                         document.getElementById('price').innerHTML = data.Explosives.price;
-                        let pagetitle = document.getElementById('pagetitle').innerHTML = "Acme-Explosives";
+                        let pagetitle = document.getElementById('pagetitle').innerHTML = "ACME-Explosives";
                         console.log('page-title', pagetitle);
                     }
                     // Decoys 
@@ -63,7 +65,7 @@ function fetchData(acmeURL) {
                         document.getElementById('manufacturer').innerHTML = data.Decoys.manufacturer;
                         document.getElementById('reviews').innerHTML = data.Decoys.reviews;
                         document.getElementById('price').innerHTML = data.Decoys.price;
-                        let pagetitle = document.getElementById('pagetitle').innerHTML = "Acme-Decoys";
+                        let pagetitle = document.getElementById('pagetitle').innerHTML = "ACME-Decoys";
                         console.log('page-title', pagetitle); 
                     }
 
@@ -76,7 +78,7 @@ function fetchData(acmeURL) {
                         document.getElementById('manufacturer').innerHTML = data.Traps.manufacturer;
                         document.getElementById('reviews').innerHTML = data.Traps.reviews;
                         document.getElementById('price').innerHTML = data.Traps.price;
-                        let pagetitle = document.getElementById('pagetitle').innerHTML = "Acme-Traps";
+                        let pagetitle = document.getElementById('pagetitle').innerHTML = "ACME-Traps";
                         console.log('page-title', pagetitle);
                     }
 

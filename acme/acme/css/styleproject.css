@@ -22,11 +22,12 @@ nav ul li {
 
 nav a {
     color: #ffffff;
+    text-decoration: none;
 }
 
 h1,
 div {
-    font-family: 'Noto Sans SC', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 #banner>ul {
